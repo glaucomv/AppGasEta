@@ -78,8 +78,11 @@ public class GasEtaActivity extends AppCompatActivity {
 
                     txtResultado.setText(recomendacao);
 
+                    btnSalvar.setEnabled(true);
+
                 }else{
                     Toast.makeText(GasEtaActivity.this, "Digite os dados obrigatórios...", Toast.LENGTH_SHORT).show();
+                    btnSalvar.setEnabled(false);
                 }
 
             }
@@ -91,6 +94,7 @@ public class GasEtaActivity extends AppCompatActivity {
                 editGasolina.setText("");
                 editEtanol.setText("");
                 txtResultado.setText("");
+                btnSalvar.setEnabled(false);
 
             }
         });
