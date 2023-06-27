@@ -1,5 +1,6 @@
 package devandroid.glaucomv.appgaseta.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,8 +10,8 @@ import androidx.annotation.Nullable;
 
 public class GasEtaDB extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "gaseta.db";
-    public static final int DB_VERSION = 1;
+    private static final String DB_NAME = "gaseta.db";
+    private static final int DB_VERSION = 1;
 
     Cursor cursor;
 
@@ -42,25 +43,13 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
     }
 
-    // TODO criar métodos para implementar um CRUD
-    // C = Create - criar banco de dados e tabelas
-    // Create database XXX.db (SQL)
-    // Create table (SQL)
-    // 1 - Nome do banco de dados
-    // 2 - Versão do banco de dados
+public void salvarObjeto(String tabela,
+                         ContentValues dados){
+        db.insert(tabela, null, dados);
 
 
+}
 
-
-
-    // R = Retrieve - recuperar os dados salvos
-    // Select * from table (SQL)
-
-    // U = Update - alterar os dados
-    // Update from table (SQL)
-
-    // D = Delete - deletar dados da tabela
-    // Delete from (SQL)
 
 
 
