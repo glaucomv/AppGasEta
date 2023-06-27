@@ -3,6 +3,8 @@ package devandroid.glaucomv.appgaseta.controller;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
 
+import java.util.List;
+
 import devandroid.glaucomv.appgaseta.database.GasEtaDB;
 import devandroid.glaucomv.appgaseta.model.Combustivel;
 import devandroid.glaucomv.appgaseta.view.GasEtaActivity;
@@ -38,11 +40,13 @@ public class CombustivelController extends GasEtaDB {
 
     }
 
+    public List<Combustivel> getListaDeDados(){
+        return listarDados();
+    }
+
     public void limpar(){
 
         dadosPreferences.clear();
         dadosPreferences.apply();
-
-
     }
 }
