@@ -91,4 +91,24 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
     }
 
+    public void alterarObjeto(String tabela,
+                              ContentValues dados){
+
+        // ID do registro a ser alterado
+        int id = dados.getAsInteger("id");
+        db.update(tabela,dados,"id=?",
+                new String[]{Integer.toString(id)});
+
+
+    }
+
+    public void deletarObjeto(String tabela,
+                              int id){
+
+        db.delete(tabela,"id=?",
+                new String[]{Integer.toString(id)});
+
+
+    }
+
 }
